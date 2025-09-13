@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Custom CSS Variables for Dynamic Color Adaptation */
+:root {
+  --text-primary: #1f2937; /* gray-800 */
+  --text-secondary: #6b7280; /* gray-500 */
+  --text-accent: #3b82f6; /* blue-500 */
+  --text-white: #ffffff;
+  --bg-light: #ffffff;
+  --bg-dark: #1f2937;
+  --bg-accent: #3b82f6;
+}
+
+/* Dynamic Text Color Utilities */
+.text-adaptive {
+  color: var(--text-primary);
+}
+
+.text-adaptive-light {
+  color: var(--text-white);
+}
+
+.text-adaptive-accent {
+  color: var(--text-accent);
+}
+
+/* Background-aware text colors */
+.bg-white .text-adaptive,
+.bg-gray-50 .text-adaptive,
+.bg-gray-100 .text-adaptive {
+  color: var(--text-primary);
+}
+
+.bg-purple-600 .text-adaptive,
+.bg-blue-600 .text-adaptive,
+.bg-yellow-500 .text-adaptive,
+.bg-red-500 .text-adaptive,
+.bg-gray-800 .text-adaptive,
+.bg-gray-900 .text-adaptive,
+.bg-black .text-adaptive {
+  color: var(--text-white);
+}
+
+/* Username specific styling - always distinct */
+.username-text {
+  color: var(--text-accent) !important;
+  font-weight: 600;
+}
+
+/* Enhanced contrast for better readability */
+.text-high-contrast {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover states with proper contrast */
+.hover-contrast:hover {
+  filter: contrast(1.1);
+}
+
+/* Focus states for accessibility */
+.focus-contrast:focus {
+  outline: 2px solid var(--text-accent);
+  outline-offset: 2px;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .text-adaptive {
+    font-size: 0.875rem; /* text-sm */
+  }
+  
+  .username-text {
+    font-size: 1rem; /* text-base */
+  }
+}
+
+/* PWA specific styles */
+@media (display-mode: standalone) {
+  .text-adaptive {
+    /* Ensure good contrast in standalone mode */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+}
+
+/* Dark mode support (if needed in future) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #f9fafb; /* gray-50 */
+    --text-secondary: #d1d5db; /* gray-300 */
+    --bg-light: #1f2937; /* gray-800 */
+    --bg-dark: #f9fafb; /* gray-50 */
+  }
+}
+
+/* Animation for smooth color transitions */
+.text-transition {
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+/* Utility for ensuring minimum contrast ratio */
+.min-contrast {
+  /* Ensures text meets WCAG AA contrast requirements */
+  filter: contrast(1.2);
+}
+
+/* Spinner styles */
+.spinner {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Tarot card animations */
+@keyframes cardFlip {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(180deg); }
+}
+
+@keyframes cardReveal {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.8) rotateY(180deg); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1) rotateY(0deg); 
+  }
+}
+
+@keyframes cardHover {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.card-flip {
+  animation: cardFlip 0.8s ease-in-out;
+}
+
+.card-reveal {
+  animation: cardReveal 0.8s ease-in-out;
+}
+
+.card-hover {
+  animation: cardHover 2s ease-in-out infinite;
+}
+
+/* 3D card effects */
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-front, .card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  /* Touch-friendly buttons */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better spacing for mobile */
+  .space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+  
+  /* Mobile-friendly text sizes */
+  .text-lg {
+    font-size: 1rem;
+  }
+  
+  .text-xl {
+    font-size: 1.125rem;
+  }
+  
+  /* Mobile grid adjustments */
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  /* Mobile card optimizations */
+  .p-6 {
+    padding: 1rem;
+  }
+  
+  /* Mobile navigation improvements */
+  nav {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* PWA specific styles */
+@media (display-mode: standalone) {
+  /* Safe area insets for mobile devices */
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  /* Touch device optimizations */
+  button, a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Notification Bell Styles */
+.notification-dropdown {
+  z-index: 9999 !important;
+  position: fixed !important;
+}
+
+.notification-backdrop {
+  z-index: 9998 !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+  .notification-dropdown {
+    width: calc(100vw - 1rem) !important;
+    max-width: 350px !important;
+    right: 0.5rem !important;
+    left: auto !important;
+  }
+}

@@ -1,0 +1,470 @@
+[
+  {
+    "id": 0,
+    "isim": "The Fool",
+    "anlam": "Yeni başlangıçlar, saflık, özgürlük, macera, spontanlık",
+    "ters": "Düşüncesizlik, hazırlıksızlık, risk alma, aşırı iyimserlik"
+  },
+  {
+    "id": 1,
+    "isim": "The Magician",
+    "anlam": "Yaratıcılık, güç, odaklanma, beceri, irade",
+    "ters": "Aldatma, enerjinin boşa gitmesi, beceriksizlik, güç kötüye kullanımı"
+  },
+  {
+    "id": 2,
+    "isim": "The High Priestess",
+    "anlam": "Sezgi, gizem, bilgelik, içsel bilgi, sakinlik",
+    "ters": "Gizli bilgilerin açığa çıkması, sezgisizlik, yüzeyde kalma"
+  },
+  {
+    "id": 3,
+    "isim": "The Empress",
+    "anlam": "Bereket, yaratıcılık, doğurganlık, bolluk, anaçlık",
+    "ters": "Yaratıcılık blokajı, kısırlık, aşırı korumacılık"
+  },
+  {
+    "id": 4,
+    "isim": "The Emperor",
+    "anlam": "Güç, otorite, liderlik, istikrar, güven",
+    "ters": "Güç kötüye kullanımı, zayıflık, diktatörlük"
+  },
+  {
+    "id": 5,
+    "isim": "The Hierophant",
+    "anlam": "Geleneksel değerler, eğitim, maneviyat, rehberlik",
+    "ters": "Geleneklere karşı çıkma, dogmatik düşünce, isyankarlık"
+  },
+  {
+    "id": 6,
+    "isim": "The Lovers",
+    "anlam": "Aşk, uyum, seçim, ortaklık, denge",
+    "ters": "Uyumsuzluk, yanlış seçim, ayrılık, çatışma"
+  },
+  {
+    "id": 7,
+    "isim": "The Chariot",
+    "anlam": "Zafer, irade gücü, hedefe odaklanma, ilerleme",
+    "ters": "Kontrol kaybı, hedefsizlik, yenilgi, engeller"
+  },
+  {
+    "id": 8,
+    "isim": "Strength",
+    "anlam": "İç güç, cesaret, sabır, nazik güç, dayanıklılık",
+    "ters": "Zayıflık, korku, sabırsızlık, güç kötüye kullanımı"
+  },
+  {
+    "id": 9,
+    "isim": "The Hermit",
+    "anlam": "Yalnızlık, içe dönüş, rehberlik, bilgelik arayışı",
+    "ters": "İzolasyon, yanlış rehberlik, yalnızlık korkusu"
+  },
+  {
+    "id": 10,
+    "isim": "Wheel of Fortune",
+    "anlam": "Değişim, döngüler, şans, kader, dönüşüm",
+    "ters": "Kötü şans, değişim direnci, döngüde takılı kalma"
+  },
+  {
+    "id": 11,
+    "isim": "Justice",
+    "anlam": "Adalet, denge, hakikat, dürüstlük, sorumluluk",
+    "ters": "Adaletsizlik, dengesizlik, yanlış kararlar"
+  },
+  {
+    "id": 12,
+    "isim": "The Hanged Man",
+    "anlam": "Fedakarlık, yeni perspektif, askıda kalma, teslimiyet",
+    "ters": "Gereksiz fedakarlık, kurban psikolojisi, pasiflik"
+  },
+  {
+    "id": 13,
+    "isim": "Death",
+    "anlam": "Dönüşüm, son, yenilenme, değişim, geçiş",
+    "ters": "Değişim direnci, eskiye takılı kalma, yenilenme korkusu"
+  },
+  {
+    "id": 14,
+    "isim": "Temperance",
+    "anlam": "Denge, ılımlılık, sabır, uyum, iyileşme",
+    "ters": "Dengesizlik, aşırılık, sabırsızlık, uyumsuzluk"
+  },
+  {
+    "id": 15,
+    "isim": "The Devil",
+    "anlam": "Bağımlılık, karanlık taraf, materyalizm, kölelik",
+    "ters": "Bağımlılıktan kurtulma, aydınlanma, özgürlük"
+  },
+  {
+    "id": 16,
+    "isim": "The Tower",
+    "anlam": "Ani değişim, yıkım, aydınlanma, kaos, özgürleşme",
+    "ters": "Değişim korkusu, yıkımı önleme, kaos korkusu"
+  },
+  {
+    "id": 17,
+    "isim": "The Star",
+    "anlam": "Umut, ilham, manevi rehberlik, iyileşme, inanç",
+    "ters": "Umut kaybı, ilham eksikliği, inançsızlık"
+  },
+  {
+    "id": 18,
+    "isim": "The Moon",
+    "anlam": "Sezgi, yanılsama, gizem, bilinçaltı, korkular",
+    "ters": "Yanılsamadan kurtulma, netlik, korkuları yenme"
+  },
+  {
+    "id": 19,
+    "isim": "The Sun",
+    "anlam": "Mutluluk, başarı, enerji, aydınlanma, neşe",
+    "ters": "Geçici mutsuzluk, aşırı iyimserlik, enerji düşüklüğü"
+  },
+  {
+    "id": 20,
+    "isim": "Judgement",
+    "anlam": "Yeniden doğuş, aydınlanma, çağrı, dönüşüm",
+    "ters": "Yeniden doğuş reddi, çağrıyı duymama, dönüşüm korkusu"
+  },
+  {
+    "id": 21,
+    "isim": "The World",
+    "anlam": "Tamamlanma, başarı, bütünlük, seyahat, uyum",
+    "ters": "Tamamlanmamış işler, başarısızlık, eksiklik hissi"
+  },
+  {
+    "id": 22,
+    "isim": "Ace of Wands",
+    "anlam": "Yaratıcı enerji, ilham, yeni başlangıçlar, potansiyel",
+    "ters": "Yaratıcı blokaj, ilham eksikliği, fırsatları kaçırma"
+  },
+  {
+    "id": 23,
+    "isim": "Two of Wands",
+    "anlam": "Seçim yapma, gelecek planlaması, keşif, karar verme",
+    "ters": "Kararsızlık, gelecek korkusu, seçim yapamama"
+  },
+  {
+    "id": 24,
+    "isim": "Three of Wands",
+    "anlam": "Genişleme, keşif, büyüme, yeni fırsatlar",
+    "ters": "Gecikme, engeller, dar görüşlülük"
+  },
+  {
+    "id": 25,
+    "isim": "Four of Wands",
+    "anlam": "Kutlama, uyum, istikrar, aile, başarı",
+    "ters": "Kutlama eksikliği, uyumsuzluk, istikrarsızlık"
+  },
+  {
+    "id": 26,
+    "isim": "Five of Wands",
+    "anlam": "Rekabet, çatışma, meydan okuma, enerji",
+    "ters": "Çatışmadan kaçınma, enerji eksikliği, motivasyon kaybı"
+  },
+  {
+    "id": 27,
+    "isim": "Six of Wands",
+    "anlam": "Zafer, başarı, gurur, ilerleme, tanınma",
+    "ters": "Gurur, aşırı güven, başarısızlık korkusu"
+  },
+  {
+    "id": 28,
+    "isim": "Seven of Wands",
+    "anlam": "Savunma, meydan okuma, kararlılık, direnç",
+    "ters": "Savunma eksikliği, kararsızlık, zayıflık"
+  },
+  {
+    "id": 29,
+    "isim": "Eight of Wands",
+    "anlam": "Hızlı hareket, ilerleme, enerji, değişim",
+    "ters": "Gecikme, enerji eksikliği, yavaş ilerleme"
+  },
+  {
+    "id": 30,
+    "isim": "Nine of Wands",
+    "anlam": "Dayanıklılık, savunma, güç, son savaş",
+    "ters": "Yorgunluk, savunma eksikliği, güçsüzlük"
+  },
+  {
+    "id": 31,
+    "isim": "Ten of Wands",
+    "anlam": "Yük, sorumluluk, zorluk, aşırı yüklenme",
+    "ters": "Yük paylaşımı, sorumluluk reddi, hafifleme"
+  },
+  {
+    "id": 32,
+    "isim": "Page of Wands",
+    "anlam": "Yeni fikirler, keşif, öğrenme, ilham",
+    "ters": "Yeni fikirlerin reddi, öğrenme isteksizliği"
+  },
+  {
+    "id": 33,
+    "isim": "Knight of Wands",
+    "anlam": "Aksiyon, macera, enerji, hareket",
+    "ters": "Aşırı acele, düşüncesizlik, enerji kaybı"
+  },
+  {
+    "id": 34,
+    "isim": "Queen of Wands",
+    "anlam": "Güçlü kadın, yaratıcılık, bağımsızlık, sıcaklık",
+    "ters": "Güçsüzlük, yaratıcılık eksikliği, bağımlılık"
+  },
+  {
+    "id": 35,
+    "isim": "King of Wands",
+    "anlam": "Liderlik, yaratıcılık, kararlılık, ilham",
+    "ters": "Liderlik eksikliği, yaratıcılık blokajı, kararsızlık"
+  },
+  {
+    "id": 36,
+    "isim": "Ace of Cups",
+    "anlam": "Aşk, duygular, sezgi, yaratıcılık, maneviyat",
+    "ters": "Duygusal blokaj, aşk eksikliği, yaratıcılık kaybı"
+  },
+  {
+    "id": 37,
+    "isim": "Two of Cups",
+    "anlam": "Aşk, ortaklık, uyum, bağlantı, denge",
+    "ters": "Ayrılık, uyumsuzluk, bağlantı kopması"
+  },
+  {
+    "id": 38,
+    "isim": "Three of Cups",
+    "anlam": "Kutlama, arkadaşlık, neşe, topluluk, paylaşım",
+    "ters": "Yalnızlık, kutlama eksikliği, arkadaşlık kaybı"
+  },
+  {
+    "id": 39,
+    "isim": "Four of Cups",
+    "anlam": "Doyumsuzluk, kaçırılan fırsatlar, içe dönüş",
+    "ters": "Fırsatları görme, doyum, dışa dönüş"
+  },
+  {
+    "id": 40,
+    "isim": "Five of Cups",
+    "anlam": "Kayıp, üzüntü, pişmanlık, geçmişe takılı kalma",
+    "ters": "Kayıptan kurtulma, umut, geleceğe odaklanma"
+  },
+  {
+    "id": 41,
+    "isim": "Six of Cups",
+    "anlam": "Nostalji, geçmiş, çocukluk, masumiyet, anılar",
+    "ters": "Geçmişe takılı kalma, nostalji tuzağı, ilerleyememe"
+  },
+  {
+    "id": 42,
+    "isim": "Seven of Cups",
+    "anlam": "Seçenekler, yanılsama, kararsızlık, hayal kurma",
+    "ters": "Netlik, karar verme, gerçekçilik"
+  },
+  {
+    "id": 43,
+    "isim": "Eight of Cups",
+    "anlam": "Ayrılış, arayış, değişim, içe dönüş",
+    "ters": "Ayrılış korkusu, değişim direnci, takılı kalma"
+  },
+  {
+    "id": 44,
+    "isim": "Nine of Cups",
+    "anlam": "Doyum, memnuniyet, arzuların gerçekleşmesi",
+    "ters": "Doyumsuzluk, aşırı memnuniyet, materyalizm"
+  },
+  {
+    "id": 45,
+    "isim": "Ten of Cups",
+    "anlam": "Aile mutluluğu, uyum, tamamlanma, sevgi",
+    "ters": "Aile sorunları, uyumsuzluk, mutsuzluk"
+  },
+  {
+    "id": 46,
+    "isim": "Page of Cups",
+    "anlam": "Yaratıcı mesaj, ilham, duygusal öğrenme",
+    "ters": "Yaratıcı blokaj, duygusal olgunlaşmama"
+  },
+  {
+    "id": 47,
+    "isim": "Knight of Cups",
+    "anlam": "Romantik teklif, duygusal hareket, sanat",
+    "ters": "Duygusal manipülasyon, romantik hayaller"
+  },
+  {
+    "id": 48,
+    "isim": "Queen of Cups",
+    "anlam": "Sezgisel kadın, şefkat, duygusal bilgelik",
+    "ters": "Duygusal kararsızlık, sezgi eksikliği"
+  },
+  {
+    "id": 49,
+    "isim": "King of Cups",
+    "anlam": "Duygusal olgunluk, şefkat, bilgelik, denge",
+    "ters": "Duygusal dengesizlik, soğukluk, manipülasyon"
+  },
+  {
+    "id": 50,
+    "isim": "Ace of Swords",
+    "anlam": "Netlik, hakikat, keskin düşünce, zafer",
+    "ters": "Kafa karışıklığı, yanılsama, netlik eksikliği"
+  },
+  {
+    "id": 51,
+    "isim": "Two of Swords",
+    "anlam": "Kararsızlık, denge, seçim yapma, geçici barış",
+    "ters": "Karar verme, netlik, dengesizlik"
+  },
+  {
+    "id": 52,
+    "isim": "Three of Swords",
+    "anlam": "Kalp kırıklığı, üzüntü, ayrılık, acı",
+    "ters": "İyileşme, affetme, kalp kırıklığından kurtulma"
+  },
+  {
+    "id": 53,
+    "isim": "Four of Swords",
+    "anlam": "Dinlenme, iyileşme, meditasyon, barış",
+    "ters": "Dinlenme eksikliği, yorgunluk, stres"
+  },
+  {
+    "id": 54,
+    "isim": "Five of Swords",
+    "anlam": "Yenilgi, çatışma, kayıp, acı",
+    "ters": "Çatışmadan kaçınma, barış, uzlaşma"
+  },
+  {
+    "id": 55,
+    "isim": "Six of Swords",
+    "anlam": "Geçiş, iyileşme, yolculuk, değişim",
+    "ters": "Geçiş korkusu, değişim direnci, takılı kalma"
+  },
+  {
+    "id": 56,
+    "isim": "Seven of Swords",
+    "anlam": "Gizlilik, kaçış, strateji, yanıltma",
+    "ters": "Gizlilik sonu, gerçeklerin açığa çıkması"
+  },
+  {
+    "id": 57,
+    "isim": "Eight of Swords",
+    "anlam": "Kısıtlama, korku, engeller, çaresizlik",
+    "ters": "Özgürlük, engelleri aşma, korkuları yenme"
+  },
+  {
+    "id": 58,
+    "isim": "Nine of Swords",
+    "anlam": "Endişe, korku, uykusuzluk, stres",
+    "ters": "Endişeden kurtulma, huzur, rahatlama"
+  },
+  {
+    "id": 59,
+    "isim": "Ten of Swords",
+    "anlam": "Son, yenilgi, acı, ihanet",
+    "ters": "Yeniden doğuş, iyileşme, umut"
+  },
+  {
+    "id": 60,
+    "isim": "Page of Swords",
+    "anlam": "Yeni fikirler, öğrenme, merak, iletişim",
+    "ters": "Fikir eksikliği, öğrenme isteksizliği"
+  },
+  {
+    "id": 61,
+    "isim": "Knight of Swords",
+    "anlam": "Hızlı hareket, keskin düşünce, cesaret",
+    "ters": "Aşırı acele, düşüncesizlik, saldırganlık"
+  },
+  {
+    "id": 62,
+    "isim": "Queen of Swords",
+    "anlam": "Keskin zeka, bağımsızlık, dürüstlük, netlik",
+    "ters": "Soğukluk, acımasızlık, netlik eksikliği"
+  },
+  {
+    "id": 63,
+    "isim": "King of Swords",
+    "anlam": "Zeka, otorite, netlik, adalet, liderlik",
+    "ters": "Zeka kötüye kullanımı, acımasızlık, adaletsizlik"
+  },
+  {
+    "id": 64,
+    "isim": "Ace of Pentacles",
+    "anlam": "Maddi fırsatlar, bolluk, yeni başlangıçlar",
+    "ters": "Fırsatları kaçırma, maddi kayıp, yoksunluk"
+  },
+  {
+    "id": 65,
+    "isim": "Two of Pentacles",
+    "anlam": "Denge, uyum, esneklik, çoklu görev",
+    "ters": "Dengesizlik, uyumsuzluk, aşırı yüklenme"
+  },
+  {
+    "id": 66,
+    "isim": "Three of Pentacles",
+    "anlam": "İşbirliği, takım çalışması, beceri, kalite",
+    "ters": "İşbirliği eksikliği, kalite düşüklüğü, ego"
+  },
+  {
+    "id": 67,
+    "isim": "Four of Pentacles",
+    "anlam": "Maddi güvenlik, tasarruf, koruma, cimrilik",
+    "ters": "Aşırı cimrilik, maddi kayıp, güvenlik kaybı"
+  },
+  {
+    "id": 68,
+    "isim": "Five of Pentacles",
+    "anlam": "Maddi zorluk, yoksulluk, izolasyon, hastalık",
+    "ters": "Maddi iyileşme, topluluk desteği, sağlık"
+  },
+  {
+    "id": 69,
+    "isim": "Six of Pentacles",
+    "anlam": "Cömertlik, yardım, paylaşım, denge",
+    "ters": "Cömertlik eksikliği, yardım reddi, dengesizlik"
+  },
+  {
+    "id": 70,
+    "isim": "Seven of Pentacles",
+    "anlam": "Sabır, yatırım, büyüme, değerlendirme",
+    "ters": "Sabırsızlık, acele, değerlendirme eksikliği"
+  },
+  {
+    "id": 71,
+    "isim": "Eight of Pentacles",
+    "anlam": "Çalışma, beceri geliştirme, odaklanma, öğrenme",
+    "ters": "Çalışma eksikliği, beceri kaybı, dağınıklık"
+  },
+  {
+    "id": 72,
+    "isim": "Nine of Pentacles",
+    "anlam": "Bağımsızlık, lüks, başarı, öz güven",
+    "ters": "Bağımlılık, lüks kaybı, öz güven eksikliği"
+  },
+  {
+    "id": 73,
+    "isim": "Ten of Pentacles",
+    "anlam": "Aile zenginliği, miras, güvenlik, bolluk",
+    "ters": "Aile sorunları, miras kaybı, güvenlik kaybı"
+  },
+  {
+    "id": 74,
+    "isim": "Page of Pentacles",
+    "anlam": "Yeni fırsatlar, öğrenme, pratik beceriler",
+    "ters": "Fırsatları kaçırma, öğrenme isteksizliği"
+  },
+  {
+    "id": 75,
+    "isim": "Knight of Pentacles",
+    "anlam": "Çalışkanlık, güvenilirlik, sabır, ilerleme",
+    "ters": "Tembellik, güvenilmezlik, sabırsızlık"
+  },
+  {
+    "id": 76,
+    "isim": "Queen of Pentacles",
+    "anlam": "Pratik bilgelik, bolluk, anaçlık, güvenlik",
+    "ters": "Pratik bilgelik eksikliği, yoksunluk, güvensizlik"
+  },
+  {
+    "id": 77,
+    "isim": "King of Pentacles",
+    "anlam": "Maddi başarı, güvenilirlik, pratik bilgelik",
+    "ters": "Maddi başarısızlık, güvenilmezlik, pratik bilgelik eksikliği"
+  }
+]

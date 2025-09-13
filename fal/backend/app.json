@@ -1,0 +1,40 @@
+{
+  "name": "fal-platform-backend",
+  "description": "Backend API for Fal Platform",
+  "repository": "https://github.com/your-username/fal-platform",
+  "logo": "https://your-logo-url.com/logo.png",
+  "keywords": ["fal", "fortune-telling", "api", "backend"],
+  "image": "heroku/nodejs",
+  "stack": "heroku-22",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+    "NODE_ENV": {
+      "description": "Environment",
+      "value": "production"
+    },
+    "JWT_SECRET": {
+      "description": "JWT Secret Key",
+      "generator": "secret"
+    },
+    "DATABASE_URL": {
+      "description": "Database URL",
+      "value": "file:./prod.db"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:mini"
+    }
+  ]
+}
+

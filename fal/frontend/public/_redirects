@@ -1,0 +1,9 @@
+# Netlify redirects file - Next.js için optimize edilmiş
+# Bu dosya Netlify'de otomatik olarak işlenir
+
+# API proxy - Backend'e yönlendirme (backend URL'inizi buraya yazın)
+/api/* https://your-backend-url.herokuapp.com/api/:splat 200
+
+# Next.js static export için gerekli redirect
+# Tüm sayfaları index.html'e yönlendir (SPA routing)
+/*    /index.html   200

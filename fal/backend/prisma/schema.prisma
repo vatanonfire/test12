@@ -1,0 +1,244 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id                String   @id @default(cuid())
+  email             String   @unique
+  password          String
+  name              String
+  role              String   @default("USER") // USER, MODERATOR, ADMIN
+  isActive          Boolean  @default(true)
+  avatar            String?
+  coins             Int      @default(100)
+  dailyFreeFortunes Int      @default(3)
+  dailyAiQuestions  Int      @default(5)
+  dailyTarotReadings Int     @default(3)
+  lastResetDate     DateTime @default(now())
+  lastLoginDate     DateTime?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  // Relations
+  rituals     Ritual[]
+  coinHistory CoinHistory[]
+  aiChats     AiChat[]
+  payments    Payment[]
+  transactions Transaction[]
+  posts       Post[] // User posts
+  notifications Notification[]
+  adminSentNotifications Notification[] @relation("AdminSentNotifications")
+  fortuneUsage FortuneUsage[]
+  fortuneComments FortuneComment[]
+  fortunes    Fortune[]
+
+  @@map("users")
+}
+
+model Post {
+  id          String   @id @default(cuid())
+  title       String
+  content     String
+  authorId    String
+  isPublished Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  author User @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  @@map("posts")
+}
+
+
+model CoinHistory {
+  id          String   @id @default(cuid())
+  userId      String
+  type        String
+  amount      Int
+  balance     Int
+  description String?
+  createdAt   DateTime @default(now())
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("coin_history")
+}
+
+model AiChat {
+  id        String   @id @default(cuid())
+  userId    String
+  question  String
+  answer    String
+  createdAt DateTime @default(now())
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("ai_chats")
+}
+
+model FortuneUsage {
+  id        String   @id @default(cuid())
+  userId    String
+  type      String   // HAND, FACE, COFFEE, TAROT, AI_CHAT
+  usedAt    DateTime @default(now())
+  cost      Int      @default(1) // 1 hak = 1 kullanım
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("fortune_usage")
+}
+
+model Payment {
+  id            String   @id @default(cuid())
+  userId        String
+  stripePaymentId String?
+  amount        Int      // Amount in cents
+  currency      String   @default("TRY")
+  status        String   @default("PENDING")
+  type          String
+  metadata      String?  // JSON as string
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("payments")
+}
+
+model CoinPackage {
+  id          String   @id @default(cuid())
+  name        String
+  coins       Int
+  price       Int      // Price in cents (kuruş)
+  isActive    Boolean  @default(true)
+  description String?
+  discount    Int      @default(0) // Discount percentage
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  transactions Transaction[]
+
+  @@map("coin_packages")
+}
+
+model Transaction {
+  id            String   @id @default(cuid())
+  userId        String
+  coinPackageId String
+  amount        Int      // Amount in cents
+  coins         Int
+  paymentMethod String
+  paymentId     String   @unique
+  status        String   @default("PENDING")
+  transactionDate DateTime @default(now())
+  description   String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  coinPackage CoinPackage @relation(fields: [coinPackageId], references: [id])
+
+  @@map("transactions")
+}
+
+model Notification {
+  id          String   @id @default(cuid())
+  userId      String   // Recipient user
+  adminId     String?  // Admin who sent the notification (for admin notifications)
+  title       String
+  message     String
+  type        String   // SYSTEM, ADMIN, COIN, RITUAL, GENERAL
+  isRead      Boolean  @default(false)
+  priority    String   @default("NORMAL") // LOW, NORMAL, HIGH, URGENT
+  category    String?  // Specific category for filtering
+  metadata    String?  // JSON string for additional data
+  expiresAt   DateTime? // Optional expiration date
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  user  User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  admin User? @relation("AdminSentNotifications", fields: [adminId], references: [id])
+
+  @@map("notifications")
+}
+
+model Ritual {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  date        DateTime
+  time        String
+  icon        String   @default("moon")
+  color       String   @default("bg-purple-100 border-purple-300 text-purple-800")
+  isCompleted Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("rituals")
+}
+
+model FortuneTemplate {
+  id          String   @id @default(cuid())
+  type        String   // HAND, FACE, COFFEE
+  title       String
+  content     String
+  category    String?  // life, love, career, money, health, character
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  fortuneComments FortuneComment[]
+
+  @@map("fortune_templates")
+}
+
+model FortuneComment {
+  id              String   @id @default(cuid())
+  userId          String
+  templateId      String
+  fortuneType     String   // HAND, FACE, COFFEE
+  content         String
+  isAiGenerated   Boolean  @default(false)
+  createdAt       DateTime @default(now())
+
+  // Relations
+  user     User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  template FortuneTemplate @relation(fields: [templateId], references: [id])
+
+  @@map("fortune_comments")
+}
+
+model Fortune {
+  id        String   @id @default(cuid())
+  userId    String
+  type      String   // HAND, FACE, COFFEE
+  imageUrl  String?
+  result    String
+  createdAt DateTime @default(now())
+
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("fortunes")
+}

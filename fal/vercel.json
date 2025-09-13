@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "buildCommand": "npm run vercel-build",
+  "outputDirectory": "frontend/.next",
+  "installCommand": "npm install",
+  "devCommand": "npm run dev:frontend",
+  "framework": "nextjs",
+  "rootDirectory": "frontend",
+  "functions": {
+    "backend/api/index.ts": {
+      "runtime": "nodejs18.x",
+      "maxDuration": 30,
+      "memory": 1024
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/backend/api/index.ts"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/$1"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}

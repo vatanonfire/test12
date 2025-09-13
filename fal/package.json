@@ -1,0 +1,41 @@
+{
+  "name": "fal-rituel-platform",
+  "version": "1.0.0",
+  "description": "Modern Fal Baktırma & Ritüel Satış Platformu",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix frontend\" \"npm run dev --prefix backend\"",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "npm run build --prefix backend",
+    "build:frontend": "npm run build --prefix frontend",
+    "start": "npm run start --prefix frontend",
+    "install:all": "npm install",
+    "setup": "npm run install:all && npm run setup:db --prefix backend",
+    "vercel-build": "npm run build:frontend",
+    "postinstall": "npm run install:all",
+    "vercel-dev": "vercel dev",
+    "vercel-deploy": "vercel --prod"
+  },
+  "keywords": ["fal", "rituel", "fortune-telling", "ai", "platform"],
+  "author": "Fal Platform Team",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^14.2.32",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "vercel": "^32.0.0"
+  },
+  "engines": {
+    "node": "18.x",
+    "npm": ">=8.0.0"
+  }
+}
